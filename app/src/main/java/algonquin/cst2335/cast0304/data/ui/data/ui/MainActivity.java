@@ -27,9 +27,31 @@ public class MainActivity extends AppCompatActivity {
             variableBinding.textview.setText("Your edit text has: " + s);
         });
 
+        model.checkedButton.observe(this, selected -> {
+            variableBinding.checkbox.setChecked(selected);
+            variableBinding.radiobutton.setChecked(selected);
+            variableBinding.switch1.setChecked(selected);
+        });
+
         variableBinding.mybutton.setOnClickListener(click ->
         {
             model.editString.postValue(variableBinding.myedittext.getText().toString());
         });
+
+        variableBinding.checkbox.setOnCheckedChangeListener( (checkbox, isChecked) ->
+        {
+            model.checkedButton.postValue(variableBinding.checkbox.isChecked());
+        });
+
+        variableBinding.radiobutton.setOnCheckedChangeListener( (radiobutton, isChecked) ->
+        {
+            model.checkedButton.postValue(variableBinding.radiobutton.isChecked());
+        });
+
+        variableBinding.switch1.setOnCheckedChangeListener( (switch1, isChecked) ->
+        {
+            model.checkedButton.postValue(variableBinding.switch1.isChecked());
+        });
+
     }
 }
