@@ -5,6 +5,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import algonquin.cst2335.cast0304.data.ui.data.data.MainViewModel;
 import algonquin.cst2335.cast0304.databinding.ActivityMainBinding;
@@ -28,14 +29,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
         model.checkedButton.observe(this, selected -> {
+            // check that all the buttons are checked
             variableBinding.checkbox.setChecked(selected);
             variableBinding.radiobutton.setChecked(selected);
             variableBinding.switch1.setChecked(selected);
+
+            // toast message
+            String tMessage = "The value is now" + selected;
+            Toast.makeText(getApplicationContext(), tMessage, Toast.LENGTH_SHORT).show();
         });
 
         variableBinding.mybutton.setOnClickListener(click ->
         {
             model.editString.postValue(variableBinding.myedittext.getText().toString());
+        });
+
+        variableBinding.myimagebutton.setOnClickListener(click ->
+        {
+            String iMessage = "The width = " + variableBinding.myimagebutton.getWidth() + " and height = " + variableBinding.myimagebutton.getHeight();
+            Toast.makeText(getApplicationContext(), iMessage, Toast.LENGTH_SHORT).show();
         });
 
         variableBinding.checkbox.setOnCheckedChangeListener( (checkbox, isChecked) ->

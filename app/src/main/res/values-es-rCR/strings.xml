@@ -4,5 +4,5 @@
     <string name="hello_message">Hola Mundo!</string>
     <string name="button_message">Soy un boton</string>
     <string name="edit_message">Editar texto</string>
-    <string name="edit_message">E</string>
+    <string name="hint_message">Escribir algo aqui</string>
 </resources>
