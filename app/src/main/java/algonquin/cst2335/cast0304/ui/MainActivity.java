@@ -1,4 +1,4 @@
-package algonquin.cst2335.cast0304;
+package algonquin.cst2335.cast0304.ui;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import algonquin.cst2335.cast0304.R;
 
 /**
  * This class represents the functionality of a login page that checks that the password
